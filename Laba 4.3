@@ -1,0 +1,46 @@
+// Lab_04_3.cpp
+// <Tikhovsky Oleksiy >
+// Лабораторна робота № 4.3
+// Розгалуження, задане формулою: функція однієї змінної.
+// Варіант 22
+
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+    double a, b, c, X_start, X_end, dX;
+
+    // Введення значень з клавіатури
+    cout << "Введіть a: ";
+    cin >> a;
+    cout << "Введіть b: ";
+    cin >> b;
+    cout << "Введіть c: ";
+    cin >> c;
+    cout << "Введіть початкове значення X: ";
+    cin >> X_start;
+    cout << "Введіть кінцеве значення X: ";
+    cin >> X_end;
+    cout << "Введіть крок dX: ";
+    cin >> dX;
+
+    // Виведення заголовка таблиці
+    cout << setw(10) << "X" << setw(10) << "F(X)" << endl;
+
+    // Обчислення та виведення значень функції F
+    for (double x = X_start; x <= X_end; x += dX) {
+        double F;
+        if (x + 5 < 0 && c == 0) {
+            F = 1 / (a * x - b);
+        } else if (x + 5 > 0 && c != 0) {
+            F = (x - a) / x;
+        } else {
+            F = 10 * x / c - 4;
+        }
+        cout << setw(10) << x << setw(10) << F << endl;
+    }
+
+    return 0;
+}
